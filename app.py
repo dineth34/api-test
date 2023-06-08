@@ -37,10 +37,11 @@ def test():
 
     # Print file details
     for file in files:
-        print("File Name:", file['file_name'])
-        print("File Path:", file['file_path'])
-        print("File Size (bytes):", file['file_size'])
-        print("-" * 30)
+      if file['file_name']=='yolov4.cfg' or file['file_name']=='yolov4.weights':
+         print("File Name:", file['file_name'])
+         print("File Path:", file['file_path'])
+         print("File Size (bytes):", file['file_size'])
+         print("-" * 30)
     return "File view option successful!"
 
 if __name__ == '__main__':
