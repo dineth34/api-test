@@ -14,6 +14,7 @@ Flask-WTF==1.1.1
 flatbuffers==23.5.26
 fonttools==4.25.0
 inflection==0.5.1
+gunicorn==20.1.0
 llvmlite==0.38.0
 mccabe==0.6.1
 mediapipe==0.9.0.1
