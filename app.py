@@ -730,6 +730,25 @@ def extract_skeleton_locations(video_file):
         right_shoulder_locations = right_shoulder_locations if right_shoulder_locations else [(0,0)]
         left_shoulder_locations = left_shoulder_locations if left_shoulder_locations else [(0,0)]
         print("row")
+        print([file_name,nose_locations, left_eye_inner_locations,left_eye_locations, 
+                         left_eye_outer_locations, right_eye_inner_locations, 
+                         right_eye_locations, right_eye_outer_locations ,left_ear_locations,
+                         right_ear_locations, mouth_left_locations, mouth_right_locations,
+                         left_elbow_locations, right_elbow_locations ,right_shoulder_locations, left_shoulder_locations, left_pinky_tip_locations, right_pinky_tip_locations,
+                        left_wrist_locations,left_thumb_cmc_locations,left_thumb_mcp_locations,left_thumb_ip_locations,
+    left_thumb_tip_locations,left_index_finger_mcp_locations,left_index_finger_pip_locations,left_index_finger_dip_locations,
+    left_index_finger_tip_locations,left_middle_finger_mcp_locations,left_middle_finger_pip_locations,
+    left_middle_finger_dip_locations,left_middle_finger_tip_locations,left_ring_finger_mcp_locations,
+    left_ring_finger_pip_locations,left_ring_finger_dip_locations,left_ring_finger_tip_locations,
+    left_pinky_mcp_locations,left_pinky_pip_locations,left_pinky_dip_locations,
+    right_wrist_locations,right_thumb_cmc_locations,right_thumb_mcp_locations,
+    right_thumb_ip_locations,right_thumb_tip_locations,right_index_finger_mcp_locations,
+    right_index_finger_pip_locations,right_index_finger_dip_locations,right_index_finger_tip_locations,
+    right_middle_finger_mcp_locations,right_middle_finger_pip_locations,
+    right_middle_finger_dip_locations,right_middle_finger_tip_locations,
+    right_ring_finger_mcp_locations,right_ring_finger_pip_locations,right_ring_finger_dip_locations,
+    right_ring_finger_tip_locations,right_pinky_mcp_locations,right_pinky_pip_locations,
+    right_pinky_dip_locations])
         writer.writerow([file_name,nose_locations, left_eye_inner_locations,left_eye_locations, 
                          left_eye_outer_locations, right_eye_inner_locations, 
                          right_eye_locations, right_eye_outer_locations ,left_ear_locations,
