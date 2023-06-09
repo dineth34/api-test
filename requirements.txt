@@ -24,7 +24,7 @@ mediapipe==0.9.0.1
 mpmath==1.2.1
 munkres==1.1.4
 mypy-extensions==0.4.3
-numpy==1.23.5
+numpy==1.21.6
 opencv-contrib-python==4.7.0.72
 opencv-python==4.7.0.72
 pandas==1.5.3
