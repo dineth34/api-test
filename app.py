@@ -79,7 +79,7 @@ def download_files():
 download_files()
 
 def convert_30_fps(file_path):
-    fps_converted_videos_path = "/kaggle/working/30fps"
+    fps_converted_videos_path = "30fps"
     
     if not os.path.exists(fps_converted_videos_path):
         os.makedirs(fps_converted_videos_path)
