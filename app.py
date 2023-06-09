@@ -748,7 +748,7 @@ def extract_skeleton_locations(video_file):
     right_middle_finger_dip_locations,right_middle_finger_tip_locations,
     right_ring_finger_mcp_locations,right_ring_finger_pip_locations,right_ring_finger_dip_locations,
     right_ring_finger_tip_locations,right_pinky_mcp_locations,right_pinky_pip_locations,
-    right_pinky_dip_locations])
+    right_pinky_dip_locations]  )
         writer.writerow([file_name,nose_locations, left_eye_inner_locations,left_eye_locations, 
                          left_eye_outer_locations, right_eye_inner_locations, 
                          right_eye_locations, right_eye_outer_locations ,left_ear_locations,
@@ -1041,7 +1041,7 @@ def GenerateSkeletonSeq():
     # bb_cor=find_bounding_box(coordinates)
     
     # cropped_video_path = crop_video(output_path_videos_with_bounding_box, (bb_cor[0][0], bb_cor[0][1], bb_cor[1][0], bb_cor[2][1]))
-
+    print(out_filepath_30_fps)
     extract_skeleton_locations(out_filepath_30_fps)
     
     print("locations extracted")
