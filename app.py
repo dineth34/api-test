@@ -52,7 +52,7 @@ def get_file_details():
     return file_details
 
 def init_firestore():
-    cred = credentials.Certificate("sslt-firebase-json/t-13859-firebase-adminsdk-eu692-ac3180a413.json")
+    cred = credentials.Certificate("t-13859-firebase-adminsdk-eu692-ac3180a413.json")
     initialize_app(cred, {'storageBucket': 't-13859.appspot.com'})
 
 def download_file_firestore(bucket_name, file_name, destination_path):
