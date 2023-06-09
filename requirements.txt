@@ -32,6 +32,7 @@ pathspec==0.7.0
 patsy==0.5.2
 pep8==1.7.1
 Pillow==9.0.1
+plotly==5.14.1
 protobuf==3.19.1
 pyasn1-modules==0.2.8
 pycosat==0.6.3
