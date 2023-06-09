@@ -992,7 +992,7 @@ def test():
 
     # Print file details
     for file in files:
-      if file['file_name']=='yolov4.cfg' or file['file_name']=='yolov4.weights':
+      if file['file_name']=='yolov4.cfg' or file['file_name']=='yolov4.weights'  or file['file_name']=='025_003_005.mp4':
          print("File Name:", file['file_name'])
          print("File Path:", file['file_path'])
          print("File Size (bytes):", file['file_size'])
@@ -1023,7 +1023,11 @@ def GenerateSkeletonSeq():
 
     extract_skeleton_locations(filename)
     
+    print("locations extracted")
+
     matrix_creation("skeleton_locations.csv")
+
+    print("matrix created")
 
     return "Success"
 
