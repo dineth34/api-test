@@ -71,7 +71,7 @@ def download_files():
     urllib.request.urlretrieve('https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.cfg', 'yolov4.cfg')
     urllib.request.urlretrieve('https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.weights', 'yolov4.weights')
     urllib.request.urlretrieve('https://drive.google.com/uc?id=1UTuoWFmOjyn-SFOhhF0rWtl1gTU9Yk_3&export=download', 't-13859-firebase-adminsdk-eu692-ac3180a413.json')
-    urllib.request.urlretrieve('https://drive.google.com/uc?id=16YxH5z1mOIzmL1s6nOdbLxJshpn8_Hbg&export=download','padded_matrix_file.csv')
+    # urllib.request.urlretrieve('https://drive.google.com/uc?id=16YxH5z1mOIzmL1s6nOdbLxJshpn8_Hbg&export=download','padded_matrix_file.csv')
     init_firestore()
     download_file_firestore('t-13859.appspot.com','TE-64_alpha_0.9.pt','TE-64_alpha_0.9.pt')
     download_file_firestore('t-13859.appspot.com','trained_model.pt','trained_model.pt')
