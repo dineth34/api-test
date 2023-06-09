@@ -1011,17 +1011,17 @@ def GenerateSkeletonSeq():
     
     download_file_firestore('t-13859.appspot.com',filename,filename)
 
-    out_filepath_30_fps = convert_30_fps(filename)
+    # out_filepath_30_fps = convert_30_fps(filename)
     
-    output_path_videos_with_bounding_box=draw_bounding_box(out_filepath_30_fps)
+    # output_path_videos_with_bounding_box=draw_bounding_box(out_filepath_30_fps)
 
-    coordinates=get_bounding_boxes(output_path_videos_with_bounding_box)
+    # coordinates=get_bounding_boxes(output_path_videos_with_bounding_box)
     
-    bb_cor=find_bounding_box(coordinates)
+    # bb_cor=find_bounding_box(coordinates)
     
-    cropped_video_path = crop_video(output_path_videos_with_bounding_box, (bb_cor[0][0], bb_cor[0][1], bb_cor[1][0], bb_cor[2][1]))
+    # cropped_video_path = crop_video(output_path_videos_with_bounding_box, (bb_cor[0][0], bb_cor[0][1], bb_cor[1][0], bb_cor[2][1]))
 
-    extract_skeleton_locations(cropped_video_path)
+    extract_skeleton_locations(filename)
     
     matrix_creation("skeleton_locations.csv")
 
