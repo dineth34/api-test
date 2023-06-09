@@ -748,6 +748,7 @@ def extract_skeleton_locations(video_file):
     right_ring_finger_mcp_locations,right_ring_finger_pip_locations,right_ring_finger_dip_locations,
     right_ring_finger_tip_locations,right_pinky_mcp_locations,right_pinky_pip_locations,
     right_pinky_dip_locations])
+    print("row")
 
 def matrix_creation(input_path):
     output_path = 'output_XY_file.csv'
