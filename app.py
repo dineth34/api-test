@@ -335,6 +335,7 @@ def extract_skeleton_locations(video_file):
     'right_ring_finger_mcp','right_ring_finger_pip','right_ring_finger_dip',
     'right_ring_finger_tip','right_pinky_mcp','right_pinky_pip',
     'right_pinky_dip'])
+    print("csv created")
     while cap.isOpened():
         ret, frame = cap.read()
         if not ret:
