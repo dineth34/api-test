@@ -71,6 +71,7 @@ def download_files():
     urllib.request.urlretrieve('https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.cfg', 'yolov4.cfg')
     urllib.request.urlretrieve('https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.weights', 'yolov4.weights')
     urllib.request.urlretrieve('https://drive.google.com/uc?id=1UTuoWFmOjyn-SFOhhF0rWtl1gTU9Yk_3&export=download', 't-13859-firebase-adminsdk-eu692-ac3180a413.json')
+    urllib.request.urlretrieve('https://drive.google.com/uc?id=16YxH5z1mOIzmL1s6nOdbLxJshpn8_Hbg&export=download','padded_matrix_file.csv')
     init_firestore()
     download_file_firestore('t-13859.appspot.com','TE-64_alpha_0.9.pt','TE-64_alpha_0.9.pt')
     download_file_firestore('t-13859.appspot.com','trained_model.pt','trained_model.pt')
@@ -728,7 +729,7 @@ def extract_skeleton_locations(video_file):
         right_elbow_locations = right_elbow_locations if right_elbow_locations else [(0,0)]
         right_shoulder_locations = right_shoulder_locations if right_shoulder_locations else [(0,0)]
         left_shoulder_locations = left_shoulder_locations if left_shoulder_locations else [(0,0)]
-
+        print("row")
         writer.writerow([file_name,nose_locations, left_eye_inner_locations,left_eye_locations, 
                          left_eye_outer_locations, right_eye_inner_locations, 
                          right_eye_locations, right_eye_outer_locations ,left_ear_locations,
@@ -748,7 +749,6 @@ def extract_skeleton_locations(video_file):
     right_ring_finger_mcp_locations,right_ring_finger_pip_locations,right_ring_finger_dip_locations,
     right_ring_finger_tip_locations,right_pinky_mcp_locations,right_pinky_pip_locations,
     right_pinky_dip_locations])
-    print("row")
 
 def matrix_creation(input_path):
     output_path = 'output_XY_file.csv'
