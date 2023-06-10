@@ -844,11 +844,11 @@ def matrix_creation(input_path):
         writer = csv.writer(f)
         for filename, skeletons in data.items():
 
-            number_str = filename[:3]  # extract the first three characters
-            number = int(number_str)  # convert to integer
-            label = number - 1  # subtract one
+            # number_str = filename[:3]  # extract the first three characters
+            # number = int(number_str)  # convert to integer
+            # label = number - 1  # subtract one
 
-            skeletons.insert(0,label)
+            skeletons.insert(0,filename)
             writer.writerow(skeletons)
             
     max_length_video = 243
@@ -945,7 +945,6 @@ def predictClass(matrix_file_path):
     loaded_model.eval()
 
     values = []
-    matrix_labels = []
     num_rows = 0
 
     with open(matrix_file_path, "r") as f_input:
@@ -956,10 +955,8 @@ def predictClass(matrix_file_path):
                 column_value = ast.literal_eval(row[i])
                 row_values.append(column_value)
             values.append(torch.tensor(row_values))
-            matrix_labels.append(ast.literal_eval(row[-1]))
             num_rows += 1
 
-    matrix_labels = np.array(matrix_labels)
     
     z_proto = torch.load('best_z_proto.pt')
     print(z_proto.shape)
@@ -976,9 +973,9 @@ def predictClass(matrix_file_path):
         scores = loaded_model(z_proto, z_query)
         _, predictions = torch.max(scores, 1)
         print(predictions)
-        print(matrix_labels)
-        accuracy = accuracy_score(matrix_labels, predictions.detach().numpy())
-        print(accuracy)
+        # print(matrix_labels)
+        # accuracy = accuracy_score(matrix_labels, predictions.detach().numpy())
+        # print(accuracy)
 
 
 
