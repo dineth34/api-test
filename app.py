@@ -1036,9 +1036,9 @@ def predict():
     
     request_data = request.get_json()
     
-    predictClass(request_data["matrix_file_path"])
+    predicted_class = predictClass(request_data["matrix_file_path"])
 
-    return "Success"
+    return predicted_class
 
 
 
