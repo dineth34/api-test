@@ -966,17 +966,19 @@ def predictClass(matrix_file_path):
     z_query,_ = loaded_model.backbone.forward(torch.tensor(values, dtype=torch.float32))
     print(z_query.shape)
     
-    
+    predicted_class = None
+
     #z_proto - prototypes from the database
     # Get the prediction scores
     with torch.no_grad():
         scores = loaded_model(z_proto, z_query)
         _, predictions = torch.max(scores, 1)
-        print(predictions)
+        predicted_class = predictions[0].item()
         # print(matrix_labels)
         # accuracy = accuracy_score(matrix_labels, predictions.detach().numpy())
         # print(accuracy)
 
+    return {"predicted_class" : predicted_class}
 
 
 @app.route('/store', methods=['GET'])
