@@ -74,8 +74,8 @@ def download_files():
     # urllib.request.urlretrieve('https://drive.google.com/uc?id=16YxH5z1mOIzmL1s6nOdbLxJshpn8_Hbg&export=download','padded_matrix_file.csv')
     init_firestore()
     download_file_firestore('t-13859.appspot.com','TE-64_alpha_0.9.pt','TE-64_alpha_0.9.pt')
-    download_file_firestore('t-13859.appspot.com','trained_model.pt','trained_model.pt')
-    download_file_firestore('t-13859.appspot.com','best_z_proto.pt','best_z_proto.pt')
+    download_file_firestore('t-13859.appspot.com','trained_model_pn_lsa.pt','trained_model_pn_lsa.pt')
+    download_file_firestore('t-13859.appspot.com','best_z_proto_lsa.pt','best_z_proto_lsa.pt')
 
 download_files()
 
@@ -941,7 +941,7 @@ def predictClass(matrix_file_path):
     
     # Load the saved model
     loaded_model = PrototypicalNetworks(encoder)
-    loaded_model.load_state_dict(torch.load('trained_model.pt'))
+    loaded_model.load_state_dict(torch.load('trained_model_pn_lsa.pt'))
     loaded_model.eval()
 
     values = []
@@ -958,7 +958,7 @@ def predictClass(matrix_file_path):
             num_rows += 1
 
     
-    z_proto = torch.load('best_z_proto.pt')
+    z_proto = torch.load('best_z_proto_lsa.pt')
     print(z_proto.shape)
     
     values = torch.stack(values)
