@@ -999,7 +999,7 @@ def test():
          print("-" * 30)
     return "File view option successful!"
 
-@app.route('/skeletonSeq', methods=['POST'])
+@app.route('/predict', methods=['POST'])
 def GenerateSkeletonSeq():
     print("seq gen started")
     
@@ -1029,16 +1029,11 @@ def GenerateSkeletonSeq():
 
     print("matrix created")
 
-    return "Success"
-
-@app.route('/predict', methods=['POST'])
-def predict():
-    
-    request_data = request.get_json()
-    
-    predicted_class = predictClass(request_data["matrix_file_path"])
+    predicted_class = predictClass("padded_matrix_file.csv")
 
     return predicted_class
+    
+    
 
 
 
