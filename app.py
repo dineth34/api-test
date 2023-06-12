@@ -73,9 +73,9 @@ def download_files():
     urllib.request.urlretrieve('https://drive.google.com/uc?id=1UTuoWFmOjyn-SFOhhF0rWtl1gTU9Yk_3&export=download', 't-13859-firebase-adminsdk-eu692-ac3180a413.json')
     # urllib.request.urlretrieve('https://drive.google.com/uc?id=16YxH5z1mOIzmL1s6nOdbLxJshpn8_Hbg&export=download','padded_matrix_file.csv')
     init_firestore()
-    download_file_firestore('t-13859.appspot.com','TE-64_alpha_0.9.pt','TE-64_alpha_0.9.pt')
-    download_file_firestore('t-13859.appspot.com','trained_model_pn_lsa.pt','trained_model_pn_lsa.pt')
-    download_file_firestore('t-13859.appspot.com','best_z_proto_lsa.pt','best_z_proto_lsa.pt')
+    download_file_firestore('t-13859.appspot.com','model_lsa_10.pt','model_lsa_10.pt')
+    download_file_firestore('t-13859.appspot.com','best_z_proto_lsa_10.pt','best_z_proto_lsa_10.pt')
+    download_file_firestore('t-13859.appspot.com','trained_model_lsa_10.pt','trained_model_lsa_10.pt')
 
 download_files()
 
