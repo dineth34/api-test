@@ -884,7 +884,7 @@ def matrix_creation(input_path):
     print("Final Matrix Creation Successful")
 
 class TransformerEncoder(nn.Module):
-    def __init__(self, n_features, d_model=32, nhead=16, num_layers=1,n_classes=64):
+    def __init__(self, n_features, d_model=32, nhead=16, num_layers=1,n_classes=10):
         super(TransformerEncoder, self).__init__()
         self.embedding = nn.Linear(n_features, d_model)
         self.positional_encoding = self.generate_positional_encoding(d_model)
@@ -931,17 +931,17 @@ class PrototypicalNetworks(nn.Module):
 
 def predictClass(matrix_file_path):
     # Load the saved TransformerEncoder model
-    saved_model_path = "TE-64_alpha_0.9.pt"
+    saved_model_path = "model_lsa_10.pt"
 
     # Instantiate the TransformerEncoder as the backbone
     n_features = 114
-    n_classes = 64
+    n_classes = 10
     encoder = TransformerEncoder(n_features=n_features)
     encoder.load_state_dict(torch.load(saved_model_path))
     
     # Load the saved model
     loaded_model = PrototypicalNetworks(encoder)
-    loaded_model.load_state_dict(torch.load('trained_model_pn_lsa.pt'))
+    loaded_model.load_state_dict(torch.load('trained_model_lsa_10.pt'))
     loaded_model.eval()
 
     values = []
@@ -958,7 +958,7 @@ def predictClass(matrix_file_path):
             num_rows += 1
 
     
-    z_proto = torch.load('best_z_proto_lsa.pt')
+    z_proto = torch.load('best_z_proto_lsa_10.pt')
     print(z_proto.shape)
     
     values = torch.stack(values)
