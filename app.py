@@ -931,7 +931,7 @@ class PrototypicalNetworks(nn.Module):
 
 def predictClass(matrix_file_path):
     # Load the saved TransformerEncoder model
-    saved_model_path = "model_lsa_10.pt"
+    saved_model_path = "TE-64_alpha_0.9.pt"
 
     # Instantiate the TransformerEncoder as the backbone
     n_features = 114
@@ -941,7 +941,7 @@ def predictClass(matrix_file_path):
     
     # Load the saved model
     loaded_model = PrototypicalNetworks(encoder)
-    loaded_model.load_state_dict(torch.load('trained_model_lsa_10.pt'))
+    loaded_model.load_state_dict(torch.load('trained_model.pt'))
     loaded_model.eval()
 
     values = []
@@ -958,7 +958,7 @@ def predictClass(matrix_file_path):
             num_rows += 1
 
     
-    z_proto = torch.load('best_z_proto_lsa_10.pt')
+    z_proto = torch.load('best_z_proto.pt')
     print(z_proto.shape)
     
     values = torch.stack(values)
