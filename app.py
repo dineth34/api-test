@@ -73,9 +73,9 @@ def download_files():
     urllib.request.urlretrieve('https://drive.google.com/uc?id=1UTuoWFmOjyn-SFOhhF0rWtl1gTU9Yk_3&export=download', 't-13859-firebase-adminsdk-eu692-ac3180a413.json')
     # urllib.request.urlretrieve('https://drive.google.com/uc?id=16YxH5z1mOIzmL1s6nOdbLxJshpn8_Hbg&export=download','padded_matrix_file.csv')
     init_firestore()
-    download_file_firestore('t-13859.appspot.com','model_lsa_10.pt','model_lsa_10.pt')
-    download_file_firestore('t-13859.appspot.com','best_z_proto_lsa_10.pt','best_z_proto_lsa_10.pt')
-    download_file_firestore('t-13859.appspot.com','trained_model_lsa_10.pt','trained_model_lsa_10.pt')
+    download_file_firestore('t-13859.appspot.com','TE-64_alpha_0.9.pt','TE-64_alpha_0.9.pt')
+    download_file_firestore('t-13859.appspot.com','trained_model.pt','trained_model.pt')
+    download_file_firestore('t-13859.appspot.com','best_z_proto.pt','best_z_proto.pt')
 
 download_files()
 
@@ -884,7 +884,7 @@ def matrix_creation(input_path):
     print("Final Matrix Creation Successful")
 
 class TransformerEncoder(nn.Module):
-    def __init__(self, n_features, d_model=32, nhead=16, num_layers=1,n_classes=10):
+    def __init__(self, n_features, d_model=32, nhead=16, num_layers=1,n_classes=64):
         super(TransformerEncoder, self).__init__()
         self.embedding = nn.Linear(n_features, d_model)
         self.positional_encoding = self.generate_positional_encoding(d_model)
@@ -935,7 +935,7 @@ def predictClass(matrix_file_path):
 
     # Instantiate the TransformerEncoder as the backbone
     n_features = 114
-    n_classes = 10
+    n_classes = 64
     encoder = TransformerEncoder(n_features=n_features)
     encoder.load_state_dict(torch.load(saved_model_path))
     
